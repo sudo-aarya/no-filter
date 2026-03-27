@@ -44,20 +44,20 @@ export default function QuizModule() {
         {!showResult ? (
           <>
             <div className="text-lg font-semibold mb-4 text-center text-gray-900 drop-shadow-[1px_1px_0_#222]">
-              {questions[step].question}
+              <span className="text-gray-900">{questions[step].question}</span>
             </div>
             <div className="grid grid-cols-2 gap-4 w-full mb-4">
               {questions[step].options.map((opt, idx) => (
                 <button
                   key={idx}
-                  className={`rounded-xl py-4 px-2 font-bold text-white text-lg shadow hover:scale-105 transition-all ${opt.color}`}
+                  className={`rounded-xl py-4 px-2 font-bold text-gray-900 text-lg shadow hover:scale-105 transition-all ${opt.color}`}
                   onClick={() => handleAnswer(opt.correct)}
                 >
                   {opt.text}
                 </button>
               ))}
             </div>
-            <div className="text-sm text-gray-700">Question {step + 1} of {questions.length}</div>
+            <div className="text-sm text-gray-900">Question {step + 1} of {questions.length}</div>
           </>
         ) : (
           <div className="flex flex-col items-center">
